@@ -1,0 +1,26 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "express-fileupload": "^0.4.0",
+    "express-session": "^1.15.6",
+    "http-errors": "~1.6.2",
+    "jquery-responsive-tables": "^2.0.1",
+    "mongoose": "^5.2.4",
+    "morgan": "~1.9.0",
+    "mysql": "^2.15.0",
+    "node-datetime": "^2.0.6",
+    "nodemailer": "^4.6.7",
+    "number": "0.0.1",
+    "random": "^2.0.12",
+    "tls": "0.0.1"
+  }
+}
