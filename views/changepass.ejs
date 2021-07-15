@@ -1,0 +1,81 @@
+<% include header %>
+<% include adminnav %>
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Change password</h2>
+            
+<div>
+    <p><%= title %></p>
+        <form action="/admin/changepass" method="POST">
+            <table >
+
+                   
+                <tr>
+                    <td> <b>Old password</b></td>
+                    <td>
+                        <input type="text" name="old" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>New Password</b></td>
+                    <td>
+                        <input type="text" name='new'  required>
+                    </td>
+                
+                </tr>
+                <tr>
+                        <td><b>Reconfirm Password</b></td>
+                        <td>
+                            <input type="text" name='reconfirm'  required>
+                        </td>
+                    
+                    </tr>
+                
+            <tr>
+        <td>
+            <input type="submit" name='sub' value="submit">
+        </td>
+    </tr>
+
+
+
+
+</table>
+</form>
+    
+</div>
+
+
+
+
+
+
+
+
+            
+        </div>
+    
+        <br class="clearfix" />
+    </div>
+
+    <div id="sidebar">
+        <div class="box">
+            <h3>Social sites</h3>
+            <ul class="list">
+                <li class="first"><a href="#">Login with Facebook.com</a></li>
+                <li><a href="#">Gmail</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">@Twitter</a></li>
+                <!--<li class="last"><a href="#">Ante semper fringilla</a></li>-->
+            </ul>
+        </div>
+
+
+    </div>
+    <br class="clearfix" />
+</div>
+
+
+<% include  footer %>

@@ -1,0 +1,70 @@
+
+
+<% include header %>
+<% include adminnav %>
+
+
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Update SUBCategories...</h2>
+
+         <p><%=title %></p>
+                    <form action="/admin/updatesubcat" method="POST" enctype="multipart/form-data" >
+                        <table >
+                                <tr>
+                                        <td hidden> Category id </td>
+                                        <td>
+                                         <input type='hidden' name="subcat_id" value="<%= result.subcat_id %>" >
+                                        </td>
+                                    </tr>
+                            
+                               <tr>
+                                <td> SubCategory Name </td>
+                                <td>
+                                    <input type="text" name="subcat_name" value="<%= result.subcat_name %>" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Category</td>
+                        <td>
+                
+                            
+                        <select name="cat_name" id="" >
+                            <option> select category</option>
+                     <% for(i=0;i< catlist.length;i++)
+                     {%>
+
+                        <option><%= catlist[i].cat_name%></option>   
+                   <% }%>
+                         
+                         </select>
+                          </td>
+                        </tr>
+                            <tr>
+                                <td> subCategory Image</td>
+                                <td>
+                                    <input type="file" name='subcat_image'>
+                                </td>
+                            </tr>
+                <tr>
+                    <td>
+                        <input type="submit"  value="ADD">
+                    </td>
+                </tr>
+             </table>
+       </form>  
+             
+        
+        </div>
+        
+    <br class="clearfix" />
+</div>
+<div id="sidebar">
+    <br class="clearfix" />
+</div>
+</div>
+
+<% include  footer %>

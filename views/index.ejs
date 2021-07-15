@@ -1,0 +1,67 @@
+<% include header%>
+
+<% include nav %>
+
+
+
+<% include slider  %>
+<style>
+	#container{
+		width:500px;
+		height:400px;
+	}
+	#part{
+		width:33%;
+		height:33%;
+		float:left;
+	}
+
+</style>
+
+
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Welcome to ResaleMart Classified</h2>
+
+<div id=container>
+	<%
+ for(i=0;i< result.length;i++)
+ {    if(i==9) 
+	{
+		break;
+	}  %>
+	<a href='/viewsubcat?cat_name=<%=result[i].cat_name%>' >
+	<div id=part>
+<center><img src='../uploads/<%=result[i].cat_image%>' height="70" width="70" >
+	<br>
+	<b><%= result[i].cat_name %></b> </center>
+
+	</div>
+	</a>
+<%} %>
+
+</div>
+		</div>
+			
+			<br class="clearfix" />
+		</div>
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social sites</h3>
+				<ul class="list">
+						<li class="first"><a href="#"><img src='./images/google.png' height="40" width='40' /></a></li>
+						<li ><a href="#"><img src='./images/twitter.jpg' height="40" width='40' /></a></li>
+						<li><a href="#"><img src='./images/insta.jpg' height="55" width='55' /></a></li>
+						<li><a href="#"><img src='./images/fb.png' height="60" width='60' /></a></li>
+					<!--<li class="last"><a href="#">Ante semper fringilla</a></li>-->
+				</ul>
+			</div>
+		</div>
+		<br class="clearfix" />
+	</div>
+
+	
+
+<% include footer %>
