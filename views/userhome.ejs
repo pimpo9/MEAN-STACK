@@ -1,0 +1,63 @@
+
+
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="https://v2.zopim.com/?5qDEjC8McKRN3bG8YN4lwSECUSPvdobg";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zendesk Chat Script-->
+
+
+<% include header %>
+<% include usernav %>
+
+<% include slider  %>
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Welcome to User Panel...</h2>
+            <p> user:<%= userdetails%><p>
+
+            <p>
+             
+            <h2>Post....</h2>
+            <% for(i=0;i<result.length;i++)
+            { %>
+
+    <table style="border: 2px solid #45a098 ;border-radius:20px; width: 100%"> 
+       
+        <tr>
+                <td rowspan="3" ><img src="../uploads/<%=result[i].myimage1%>" alt="loding" height='100px' width="100px" /></td>
+                <td><b>Title:</b><%=result[i].title%>   </td>
+        </tr>
+        <tr>
+                <td><b>Description:</b> <%=result[i].description%> </td>
+                
+        </tr>
+        <tr>
+                <td><b>Price:</b><%=result[i].price%> </td>
+                <td>  </td>
+        </tr>
+    </table>
+
+<% }  %>
+
+
+            
+        
+       
+
+    </div>
+    <br class="clearfix" />
+</div>
+
+<div id="sidebar">
+    
+<br class="clearfix" />
+</div>
+</div>
+
+<% include  footer %>

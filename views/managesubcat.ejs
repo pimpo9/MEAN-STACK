@@ -1,0 +1,73 @@
+<% include header %>
+<% include adminnav %>
+<style>
+    table {
+        border:1;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 4px;
+    }
+    
+    tr:nth-child(even){background-color:whitesmoke ;}
+    
+    th {
+        background-color: #B9C9FE;
+        color: white;
+        
+    }
+
+    #stl{
+        background-color:rgb(228, 207, 228);
+        width: 90%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    </style>
+
+<div style="width:100%" id="page">
+    <div style="width:100%" id="content">
+        <div class="box">
+            <h2>SubCategories Info....</h2>
+        <div id='stl'>
+             <table style="text-align: center">
+                 <tr>
+                     <th>SubCat_id</th>
+                     <th>SubCat_Name</th>
+                     <th>Cat_Name</th>
+                     <th>SubCat_Image</th>
+                     <th>Action</th>
+                     
+                 </tr>
+
+                 <% for(i=0;i<result.length;i++)
+                 { %>
+                <tr>
+                 <td><%= result[i].subcat_id %></td>
+                    <td><%= result[i].subcat_name %></td>
+                    <td><%= result[i].cat_name %></td>
+                    <td><%= result[i].subcat_image %></td>
+                    <td> 
+                        <a href="/admin/updatesubcat?subcat_name=<%= result[i].subcat_name%>&subcat_id=<%= result[i].subcat_id%>">
+                                        <img src="../images/update.jpg" height="20" width="20"></a>   
+                   
+      
+    <a href="/admin/deletesubcat?subcat_name=<%= result[i].subcat_name%>"><img src="../images/delete.jpg" height="20" width="20"></a>
+                     </td>
+    
+                   </tr>
+
+                  <%  }  %>
+         
+             </table>
+             </div>
+            </div>
+        <br class="clearfix" />
+ </div>
+ <div id="sidebar">
+     <br class="clearfix" />
+ </div>
+</div>
+
+<% include  footer %>

@@ -1,0 +1,157 @@
+<% include header %>
+<% include nav %>
+<script>
+                $(document).ready(function(){
+                   $('#my').click(function(){
+                    $('ul #myid').slideToggle()
+                   })
+                })
+             </script>
+             <style>
+             #div1{
+                 width: 600px;
+                 height:150px;
+                 background:#fff; 
+                   position: relative;
+                   box-shadow: 1px 1px 18px 2px rgba(160,30,85,0.4);
+                   margin-left:30px;
+                   margin-bottom:20px;
+               }
+               #div2{
+                 width: 220px;
+                 height:130px;
+                 background:#fff; 
+                 position: absolute;
+                 box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.3);
+                 top: 9px;
+                 left: -25px;
+                 margin-bottom:10px;
+               }
+               #bt{
+                 position: absolute;
+                 top: 100px;
+                 left: 495px;
+                 width:85px;
+                 padding:8px;
+                 background: #1e90ff; 
+                 outline: none;
+                 border: none;
+                 border-radius: 2px;
+               }
+               #bt:hover{
+                 background: #6a5acd; 
+               }
+               #bt a{
+               color: #fff;
+               text-decoration:none;
+               }
+              #div3{
+                 position: absolute;
+                 top: -2px;
+                 left: 260px;
+                 width:250px;
+                 padding:3px;
+               }
+              #myid a{
+               text-decoration:none;
+               font-size:18px;
+               color:#ff0000;
+               }
+               #mydiv{
+               width:850px;
+               height:auto;
+               margin-top:20px;
+               margin-left:65px;
+               padding:15px;
+               box-sizing:border-box;
+               border-radius:16px;
+               
+             }
+             hr{
+               width:500px;
+               margin-left:25%;
+             }
+             p{
+               margin:0.5rem;
+             }
+             </style>
+
+
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+
+<div id='filter' style="background-color: #E0DCDC;">
+    <form method="POST" action="/viewpost">
+         
+             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Price Range
+              <br>
+              <input style='width:130px' type='hidden' value='<%= result[0].cat_nm%>' name='cat_nm'>
+              <input style='width:110px' type='text' name='sprice' placeholder="price from">&nbsp;&nbsp;
+              <input style='width:110px' type='text' name='eprice'placeholder="price to">
+              <br>
+              <input type="submit" value="Filter">
+</form>
+<form method="POST" action="/viewpost">
+
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; City
+              <br>
+              <input style='width:130px' type='hidden' value='<%= result[0].cat_nm%>' name='cat_nm'>
+              <input style='width:110px' type='text' name='city' placeholder="City">
+              
+              <br>
+              &nbsp;&nbsp;<input type="submit" value="Filter">
+    </form>
+
+
+
+</div>
+
+
+
+
+            <h2>Post....</h2>
+
+            <%for(i = 0; i < result.length; i++){%>
+                   
+                   <div id="div1">
+                   <div id="div2">
+                     <img src="../uploads/<%= result[i].myimage1%>" width="100px" height="100" style="margin: 25px 0 0 23px">
+                     <div id="div3">
+                     <p>Title<%= result[i].title%></p>
+                     <p><%= result[i].description%></p>
+                     <p><%= result[i].price%></p>
+                     </div>
+                     <button id="bt"><a href="/singlepost?id=<%=result[i].id %>">View</button>
+                   </div>
+                   </div>
+                   
+                   <% } %>
+
+        </div>
+    
+        
+			<br class="clearfix" />
+		</div>
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>SubCategory List..</h3>
+				<ul class="list">
+                   <% for(i=0;i< catlist.length;i++)
+                    {%>
+					<li><a href="/viewpost?cat_name=<%=catlist[i].cat_name %>"><%=catlist[i].cat_name %></a></li>
+                   <%} %>
+				</ul>
+			</div>
+
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+
+	
+
+<% include footer %>

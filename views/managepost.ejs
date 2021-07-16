@@ -1,0 +1,86 @@
+<% include header %>
+<% include adminnav %>
+  
+<style>
+    table {
+        border:1;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 4px;
+    }
+    
+    tr:nth-child(even){background-color:whitesmoke ;}
+    
+    th {
+        background-color: #B9C9FE;
+        color: white;
+        
+    }
+
+    #stl{
+        background-color:rgb(228, 207, 228);
+        width: 90%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    </style>
+<div style="width:100%" id="page">
+        
+    <div style="width:100%" id="content">
+        <div  class="box">
+            <h2>Post Info....</h2>
+            <div id='stl' style="overflow-x:auto;">
+            
+             <table style="text-align: center" border="1" cellspacing="1">
+                 <tr>
+                     
+                     <th>Title</th>
+                     <th>Category</th>
+                     <th>Descrip</th>
+                     <th>Price</th>
+                     <th>Img1</th>
+ <th>Img2</th>
+ <th>Img3</th>
+                     <th>address</th>
+                     <th>email</th>
+                     <th>mob</th>
+                    
+                     <th>city</th>
+                     <th>user</th>
+                     <th>Action</th>
+                 </tr>
+                 <% for(i=0;i < result.length;i++)
+                 { %>
+                <tr>
+                    <td><%= result[i].title %></td>
+                    <td><%= result[i].cat_nm %></td>
+                    <td><%= result[i].description %></td>
+                    <td><%= result[i].price %></td>
+                    <td><img src="../uploads/<%= result[i].myimage1 %>" height="60" width="60"></td>
+                    <td><img src="../uploads/<%= result[i].myimage2 %>" height="60" width="60"></td>
+                    <td><img src="../uploads/<%= result[i].myimage3 %>" height="60" width="60"></td>
+                    
+                    <td><%= result[i].address %></td>
+                    <td><%= result[i].email %></td>
+                    <td><%= result[i].mob %></td>
+                    <td><%= result[i].city %></td>
+                    <td><%= result[i].ustatus %></td>
+                    <td>
+                            <a href="/admin/deletevpost?id=<%= result[i].id %>">
+                                <img src="../images/delete.jpg" height="30" width="30"></a>
+                    </td>
+                <%}%>
+
+             </table>
+             </div>
+            </div>
+        <br class="clearfix" />
+ </div>
+ <div id="sidebar">
+     <br class="clearfix" />
+ </div>
+</div>
+
+<% include  footer %>

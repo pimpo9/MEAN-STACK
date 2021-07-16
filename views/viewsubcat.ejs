@@ -1,0 +1,77 @@
+<% include header%>
+
+<% include nav %>
+
+
+
+<% include slider  %>
+<style>
+	#container{
+		width:500px;
+		height:400px;
+	}
+	#part{
+		width:33%;
+		height:33%;
+		float:left;
+	}
+
+</style>
+
+
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>SubCategory>>
+                        <% if(result.length!=0) { %>	
+                            <%=result[0].cat_name %>
+                            
+                            <% } else { %>
+                            Sub Category Not Found!!!
+                            <% } %>   
+                    
+                    
+                </h2>
+
+<div id=container>
+	<%
+ for(i=0;i< result.length;i++)
+ {   %>
+	
+	<a href='/viewpost?cat_nm=<%=result[i].subcat_name%>' >
+	<div id=part>
+<center><img src='../uploads/<%=result[i].subcat_image%>' height="70" width="70" >
+	<br>
+	<b><%= result[i].subcat_name %></b> </center>
+
+	</div>
+	</a>
+<%} %>
+
+</div>
+			</div>
+			
+
+
+			<br class="clearfix" />
+		</div>
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>Category List..</h3>
+				<ul class="list">
+                   <% for(i=0;i< catlist.length;i++)
+                    {%>
+					<li><a href="/viewsubcat?cat_name=<%=catlist[i].cat_name %>"><%=catlist[i].cat_name %></a></li>
+                   <%} %>
+				</ul>
+			</div>
+
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+
+	
+
+<% include footer %>

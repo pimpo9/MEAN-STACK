@@ -1,0 +1,141 @@
+<% include header %>
+    <% include nav %>
+<% include slider  %>
+
+        <style>
+                #log {
+                    border-radius: 5px;
+                    background-color: rgb(255, 221, 157);
+                    padding: 20px;
+                }
+                
+                input[type=text],input[type=password],input[type=number], select,textarea{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                resize: vertical;
+                }
+                 
+                
+                input[type=submit] {
+                background-color: #FF7A59;
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                float:left;
+                }
+                
+                
+                input[type=submit]:hover {
+                background-color:rgb(73, 116, 211);
+                }
+                
+                </style>
+
+
+            <div id="page">
+                <div id="content">
+                    <div class="box">
+                        <h2>Register here..</h2>
+                        <%= Result %>
+                        <div id='log'>
+                        <form action="/register" method="POST">
+                            <table >
+                                <tr>
+                                    <td> Username</td>
+                                    <td>
+                                        <input type="text" name='nm' required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> Email</td>
+                                    <td>
+                                        <input type="text" name="email" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> Password</td>
+                                    <td>
+                                        <input type="password" name='pass'  required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> Address</td>
+                                    <td>
+                                        <textarea type="text" name='ad'></textarea></td>
+                </tr>
+                <tr>
+                    <td> Phoneno</td>
+                    <td> <input type="number"  name='num' required  pattern="[0-9]{10}"></td>
+                </tr>
+                <tr>
+                    <td> city</td>
+                    <td> 
+                        <select name ="city" id="" >
+                           <option> select city</option>
+                           <option> Jabalpur</option>
+                           <option> Indore</option>
+                           <option> bhopal</option>
+                        
+                        </select>
+                    </td>
+                    <tr>
+                        <td> Gender</td>
+                        <td>
+                           <input type="radio" name='gender'value='female'>Female
+                         <input type="radio" name='gender'value='Male'> Male 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="hidden" name='role' value="user">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="hidden" name='status' value="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="submit">
+                        </td>
+                    </tr>
+                
+            
+
+
+               </table>
+           </form>
+        </div>
+    </div>
+    
+    <br class="clearfix" />
+    
+    
+</div>
+
+
+<div id="sidebar">
+    <div class="box">
+        <h3>Social Links..</h3>
+        <ul class="list">
+            <li class="first"><a href="#"><img src='./images/google.png' height="40" width='40' /></a></li>
+            <li ><a href="#"><img src='./images/twitter.jpg' height="40" width='40' /></a></li>
+            <li><a href="#"><img src='./images/insta.jpg' height="55" width='55' /></a></li>
+            <li><a href="#"><img src='./images/fb.png' height="60" width='60' /></a></li>
+            <!--<li class="last"><a href="#">Ante semper fringilla</a></li>-->
+        </ul>
+    </div>
+
+
+</div>
+<br class="clearfix" />
+</div>
+
+
+<% include  footer %>
+       

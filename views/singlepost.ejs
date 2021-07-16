@@ -1,0 +1,252 @@
+<%include header%>
+<%include nav%>
+<style>
+ 
+.list li .fa{
+	margin-left: 60px;
+	cursor: pointer;
+}
+
+.fa:hover{
+	transform: scale(1.4) rotateX(360deg);
+	transition: .4s;
+}
+.fa-facebook{
+	color: #3b5998;
+}
+.fa-twitter{
+	color: #00aced;
+}
+.fa-linkedin{
+	color: #0077b5;
+}
+.fa-instagram{
+    color:#f09433; 
+}
+.fa-google-plus{
+	color: #d34836;
+}
+li .fa{
+	font-size:30px;
+}
+td input,textarea{
+	border: 1px solid #add8e6;
+	outline:none;
+	border-radius:8px;
+	height:23px;
+	width: 230px;
+	padding:3px; 
+}
+td textarea{
+	height:60px;
+}
+td input[type = 'submit']{
+	width: 150px;
+	border:none;
+	font-weight: bold;
+	font-size: 15px;
+	background:#1e90ff;
+	color: #fff;
+	height: 30px;
+	cursor: pointer;
+}
+td input:focus,textarea:focus{
+	box-shadow: 0px 1px 4px 1px rgba(60,20,250,0.5);
+}
+td input[type = 'submit']:hover{
+box-shadow: 4px 4px 9px 2px rgba(0,0,0,0.5);
+background: #6a5acd; 
+}
+
+table{
+	height: auto;
+	width: auto;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 3px 7px 23px 1px rgba(0,0,0,0.4);
+	border:1px solid #d3d3d3;
+	outline:none;
+	user-select: none;
+}
+.tab tr:nth-child(even):hover{
+   background: #dcdcdc;
+}
+.tab tr:nth-child(odd):hover{
+   background: #e6e6fa;
+}
+td input[type ="file"]{
+	border:none;
+}
+.tab tr th{
+	background: #6495e8;
+	color:#fff;
+}
+.tab th,td{
+	padding: 15px 1px;
+}
+select{
+padding:8px;
+border-radius:5px;
+background-color:#2D3E50;
+color:#fff;
+font-size:14px;
+box-shadow:inset 0 0 10px 0 rgba(0,0,0,0.6);
+outline:none
+}
+.tab,tr{
+	border-bottom: 1px solid #d3d3d3;
+}
+.tab tr th{
+  border-right: 2px solid #d3d3d3;
+}
+
+/************************Viewindexmain ki style start*********************/
+.column{
+	float: left;
+	width: 15%;
+	padding: 10px;
+	box-shadow:3px 3px 11px -1px rgba(236, 18, 55, 0.397);
+	margin-left:20px;
+  }
+  
+  .column:hover{
+	 transform:scale(1.02);
+	 transition:.3s;
+	 border-radius:10px;
+  }
+  .column img {
+	  opacity: 0.8; 
+	  cursor: pointer; 
+  
+  }
+  
+  .column img:hover {
+	  opacity: 1;
+  }
+  
+  
+  .row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	  background:red;
+  }
+  
+  .container {
+	  position: relative;
+	  width:405px;
+	  height:400px;
+	  margin-left:20px;
+	  margin-top:60px;
+	  box-shadow: 8px 8px 14px -5px rgba(0,100,200,0.4);
+	  outline:none;
+	  }
+  
+  
+  #imgtext {
+	  position: absolute;
+	  bottom: 15px;
+	  left: 15px;
+	  color: white;
+	  font-size: 20px;
+  }
+  #description{
+	position:absolute;
+    width:250px;
+	height:100%;
+	left:460px;
+	top:0px;
+	padding:15px;
+	box-sizing:border-box;
+	box-shadow: 8px 8px 14px -5px rgba(0,100,200,0.4);
+	border:1px solid rgba(228, 210, 210, 0.356);
+	justify-content: center;
+  }
+  .details{
+	  width: 315px;
+	  height: auto;
+	  position: absolute;
+	  top: 25px;
+	  left: 660px;
+	  padding: 10px 25px;
+	  box-sizing: border-box;
+	  box-shadow:9px 9px 9px -8px rgba(255, 200, 49, 0.986);
+  }
+  .details p{
+	  margin-bottom: -1px;
+	  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .fa-envelope{
+	  color:rgb(16, 186, 216);
+  }
+  .fa-phone{
+	  color:rgba(18, 236, 18, 0.61);
+  }
+  .fa-globe{
+	  color:rgba(17, 14, 184, 0.822);
+  }
+  .fa-map-marker{
+	  color:red;
+  }
+/***********View postindex syle ki ending***************************************/
+</style>
+
+<script>
+   $(document).ready(function(){
+      $('#my').click(function(){
+       $('ul #myid').slideToggle()
+      })
+   })
+</script>
+
+<div id="page">
+    <div id="content" style="height:100%;">
+      <div class="box" style="width:1000px;padding:10px;height:650px;">
+    
+      <div class="row">
+      
+       <div class="column">
+           <img src="../uploads/<%= result[0].myimage1%>" style="width:100%;height:140px;" onclick="myFunction(this);" class="animated flipInY">
+      </div>
+      
+      <div class="column">
+        <img src="../uploads/<%= result[0].myimage2%>" style="width:100%;height:140px;" onclick="myFunction(this);" class="animated flipInY">
+       </div>
+      
+      <div class="column">
+      <img src="../uploads/<%= result[0].myimage3%>" style="width:100%;height:140px;" onclick="myFunction(this);" class="animated flipInY">
+       </div>
+</div>
+
+    <div class="container">
+      <img id="expandedImg" style="width:100%;height:350px;" src="../uploads/<%= result[0].myimage1%>">
+    <div id="imgtext"></div>
+    <div id="description">
+    <h4 style="color:orangered;"><%= result[0].title%></h4>
+     <h5><span style="color:blue;">Description :</span><%= result[0].description%></h5><br>
+     <h4>&#8377;&nbsp;&nbsp;&nbsp;<%= result[0].price%></h4>
+    </div>
+    </div>
+</div>
+<div class="details">
+    <h4 style="margin-bottom:7px;color:rgb(224, 18, 70);">Contact Person</h4>
+    <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;&nbsp;<%= result[0].email %></p>
+   <p><i class="fa fa-phone"></i>&nbsp;&nbsp;&nbsp;<%= result[0].mob %></p>
+   <p><i class="fa fa-globe"></i>&nbsp;&nbsp;&nbsp;<%= result[0].city %></p>
+   <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;<%= result[0].ad %></p>
+</div>
+<br class="clearfix" />
+</div>
+   <br class="clearfix" />
+  </div>
+  <script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+  <%include footer%>

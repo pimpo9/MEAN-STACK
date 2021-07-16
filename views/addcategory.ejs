@@ -1,0 +1,48 @@
+
+
+<% include header %>
+<% include adminnav %>
+
+
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Add Categories...</h2>
+
+         <p><%=Result %></p>
+                    <form action="/admin/addcategory" method="POST" enctype="multipart/form-data" >
+                        <table >
+                            
+                               <tr>
+                                <td> Category Name </td>
+                                <td>
+                                    <input type="text" name="cat_name" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Category Image</td>
+                                <td>
+                                    <input type="file" name='cat_image' >
+                                </td>
+                            </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name='sub' value="ADD">
+                    </td>
+                </tr>
+             </table>
+       </form>  
+             
+        
+        </div>
+        
+    <br class="clearfix" />
+</div>
+<div id="sidebar">
+    <br class="clearfix" />
+</div>
+</div>
+
+<% include  footer %>

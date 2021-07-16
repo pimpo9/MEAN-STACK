@@ -1,0 +1,54 @@
+
+
+<% include header %>
+<% include adminnav %>
+
+
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Update Categories...</h2>
+
+         <p><%=title %></p>
+                    <form action="/admin/updatecat" method="POST" enctype="multipart/form-data" >
+                        <table >
+                                <tr>
+                                        <td hidden> Category id </td>
+                                        <td>
+                                         <input type='hidden' name="cat_id" value="<%= result.cat_id %>" >
+                                        </td>
+                                    </tr>
+                            
+                               <tr>
+                                <td> Category Name </td>
+                                <td>
+                                    <input type="text" name="cat_name" value="<%= result.cat_name %>" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> Category Image</td>
+                                <td>
+                                    <input type="file" name='cat_image'>
+                                </td>
+                            </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name='sub' value="ADD">
+                    </td>
+                </tr>
+             </table>
+       </form>  
+             
+        
+        </div>
+        
+    <br class="clearfix" />
+</div>
+<div id="sidebar">
+    <br class="clearfix" />
+</div>
+</div>
+
+<% include  footer %>

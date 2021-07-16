@@ -1,0 +1,73 @@
+<% include header %>
+<% include adminnav %>
+<style>
+    table {
+        border:1;
+        width: 100%;
+    }
+    
+    th, td {
+        text-align: center;
+        padding: 4px;
+    }
+    
+    tr:nth-child(even){background-color:whitesmoke ;}
+    
+    th {
+        background-color: #B9C9FE;
+        color: white;
+        
+    }
+
+    #stl{
+        background-color:rgb(228, 207, 228);
+        width: 90%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    </style>
+
+<div style="width:100%" id="page">
+    <div style="width:100%" id="content">
+        <div class="box">
+            <h2>Categories Info....</h2>
+
+        <div id='stl'>
+             <table>
+                 <tr>
+                     <th>Cat_id</th>
+                     <th>Cat_Name</th>
+                     <th>Cat_Image</th>
+                     <th>Action</th>
+                     
+                 </tr>
+
+              <% for(i=0;i< result.length; i++)
+                { %>
+               <tr>
+                   <td><%= result[i].cat_id %></td>
+                   <td><%= result[i].cat_name %></td>
+                   <td><%= result[i].cat_image %></td>
+                   <td> 
+        <a href="/admin/updatecat?cat_name=<%= result[i].cat_name%>&cat_id=<%= result[i].cat_id%>">
+                        <img src="../images/update.jpg" height="30" width="30"></a>   
+      
+    <a href="/admin/deletecat?cat_name=<%= result[i].cat_name%>">
+        <img src="../images/delete.jpg" height="30" width="30"></a>
+                     </td>
+    
+                   </tr>
+
+                  <%  }  %>
+         
+             </table>
+             </div>
+             
+            </div>
+        <br class="clearfix" />
+ </div>
+ <div id="sidebar">
+     <br class="clearfix" />
+ </div>
+</div>
+
+<% include  footer %>

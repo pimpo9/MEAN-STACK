@@ -1,0 +1,164 @@
+<% include header %>
+<% include usernav %>
+<% include slider  %>
+<style>
+#log {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type=text], select,textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+resize: vertical;
+}
+input[type=submit] {
+background-color: #45a098;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+float:left;
+}
+
+
+input[type=submit]:hover {
+background-color:rgb(73, 116, 211);
+}
+
+</style>
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>ADD Post</h2>
+            
+            <p><%= title %></p>
+            <div id='log'>
+          <form method="POST" action="/addpost" enctype="multipart/form-data">
+                <table  cellspacing='10'>
+                    <tr>
+                        <td>Title</td>
+                        <td>
+                        <input type="text" name="title" />    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Category</td>
+                        <td>
+                                <select name="cat_nm">
+                                        <option>select category</option>
+                                        
+                                        <%for(i=0;i<subcatlist.length;i++)
+                                        {%>
+                                        <option><%= subcatlist[i].subcat_name %></option>  
+
+                                       <% }%>
+
+                                           
+                                        
+          </select>    
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Ads Description</td>
+                        <td>
+                        <textarea name='description'></textarea>    
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>Price</td>
+                            <td>
+                            <input type="text" name="price" />    
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>Ads Images</td>
+                                <td>
+                                Select File : <input type="file" name="myimg1" />
+                                <br><br>
+                                Select File : <input type="file" name="myimg2" />
+                                <br><br>
+                                Select File : <input type="file" name="myimg3" />    
+                                </td>
+                            </tr>
+                        
+
+                    <tr>
+                        <td>Address</td>
+                        <td>
+                        <textarea name="address" rows="5" cols="32"></textarea>    
+                        </td>
+                    </tr>
+                    <tr>
+                            <td>Email ID</td>
+                            <td>
+                            <input type="text" name="email" />    
+                            </td>
+                        </tr>
+                    <tr>
+                        <td>Phone no.</td>
+                        <td>
+                        <input type="text" name="mob" />    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                        <select name="city">
+                            <option>Select City</option>
+                            <option>Indore</option>
+                            <option>Bhopal</option>
+                            <option>Ujjain</option>
+                        </select>    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                           <input type="submit" name="s" value="Add Post" />     
+                        </td>
+                    </tr>
+                </table>        
+            </form>
+            
+        </div>    
+            
+
+
+    
+        
+       
+
+    </div>
+    
+    <br class="clearfix" />
+    
+    
+</div>
+
+
+<div id="sidebar">
+    <div class="box">
+        <h3>Social Links..</h3>
+        <ul class="list">
+            <li class="first"><a href="#"><img src='../images/google.png' height="40" width='40' /></a></li>
+            <li ><a href="#"><img src='../images/twitter.jpg' height="40" width='40' /></a></li>
+            <li><a href="#"><img src='../images/insta.jpg' height="55" width='55' /></a></li>
+            <li><a href="#"><img src='../images/fb.png' height="60" width='60' /></a></li>
+            <!--<li class="last"><a href="#">Ante semper fringilla</a></li>-->
+        </ul>
+    </div>
+
+
+</div>
+<br class="clearfix" />
+</div>
+
+
+<% include  footer %>

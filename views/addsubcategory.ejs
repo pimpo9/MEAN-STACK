@@ -1,0 +1,65 @@
+
+
+<% include header %>
+<% include adminnav %>
+
+
+
+
+<div id="page">
+    <div id="content">
+        <div class="box">
+            <h2>Add SubCategories...</h2>
+
+        <%=title %>
+                    <form action="/admin/addsubcategory" method="POST" enctype="multipart/form-data" >
+                        <table >
+                            
+                               <tr>
+                                <td> SubCategory Name </td>
+                                <td>
+                                    <input type="text" name="subcat_name" >
+                                </td>
+                            </tr>
+
+                            <tr>
+                                    <td> Category</td>
+                            <td>
+                    
+                                
+                            <select name="cat_name" id="" >
+                                <option> select category</option>
+                         <% for(i=0;i< catlist.length;i++)
+                         {%>
+
+                            <option><%= catlist[i].cat_name%></option>   
+                       <% }%>
+                             
+                             </select>
+                              </td>
+                            </tr>
+                            <tr>
+                                <td>SubCategory Image</td>
+                                <td>
+                                    <input type="file" name='subcat_image' >
+                                </td>
+                            </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name='sub' value="ADD">
+                    </td>
+                </tr>
+             </table>
+       </form>  
+             
+        
+        </div>
+        
+    <br class="clearfix" />
+</div>
+<div id="sidebar">
+    <br class="clearfix" />
+</div>
+</div>
+
+<% include  footer %>
